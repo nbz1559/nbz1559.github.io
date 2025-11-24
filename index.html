@@ -23,6 +23,21 @@
 
     <main class="main-content">
         <h2>Main</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Online</h3>
+                <p>Status</p>
+            </div>
+            <div class="card">
+                <h3>11.4.4</h3>
+                <p>Version</p>
+            </div>
+            <div class="card"id="clickme">
+                <h3>Information</h3>
+                <p>Click to view</p>
+            </div>
+        </div>
+
         <div class="columns">
             <div class="column card" id="changelog-column">
                 <h3>Changelog</h3>
@@ -67,6 +82,10 @@
         } finally {
             btn.disabled = false;
         }
+    });
+
+    document.getElementById("clickme").addEventListener("click", function () {
+        window.location.href = "info.html";
     });
 
     document.getElementById("sidebardiscord").addEventListener("click", async function(e) {

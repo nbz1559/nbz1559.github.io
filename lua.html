@@ -22,7 +22,7 @@
                     <li><a href="lua.html">Lua Documentation</a></li>
                     <li><a href="tos.html">Terms of Service</a></li>
                     <li><a href="#" id="siderbardownload">Download</a></li>
-                    <li><a href="#" id="sidebardiscord">Discord</a></li>
+                    <li><a href="#" id="sidebardiscord">Discord (Support)</a></li>
                 </ul>
             </nav>
         </aside>
@@ -98,8 +98,7 @@ local my_root = menu.my_root()
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.list(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.list(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc)
                         </h4>
@@ -114,8 +113,7 @@ local my_list = menu.list(my_root, "Example List", "Hello guys")
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.action(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.action(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc,
                             <span class="highlight2">function</span> callback)
@@ -133,8 +131,7 @@ end)
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.toggle(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.toggle(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc,
                             <span class="highlight">bool</span> default,
@@ -158,8 +155,7 @@ end)
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.slider(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.slider(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc,
                             <span class="highlight">int</span> minval,
@@ -185,8 +181,7 @@ end)
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.slider_float(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.slider_float(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc,
                             <span class="highlight">float</span> minval,
@@ -212,8 +207,7 @@ end)
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.text_slider(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.text_slider(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc,
                             <span class="highlight">int</span> defaultindex,
@@ -240,8 +234,7 @@ end)
                     </div>
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.list_select(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.list_select(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc,
                             <span class="highlight2">{Actions table}</span>,
@@ -267,8 +260,7 @@ end)
                     </div>
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.text_input(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.text_input(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc,
                             <span class="highlight2">function</span> callback)
@@ -289,8 +281,7 @@ end)
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.place_holder(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.place_holder(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name)
                         </h4>
                         <p class="description">
@@ -307,8 +298,7 @@ local my_place_holder = menu.place_holder(my_root, "Example Place Holder")
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.hyper_link(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.hyper_link(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc,
                             <span class="highlight2">string</span> url)
@@ -327,8 +317,7 @@ local my_hyper_link = menu.hyper_link(my_root, "Youtube", "Takes you to youtube"
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">int</span> menu.read_only(
-                            <span class="highlight">int</span> parent,
+                            <span class="highlight">int</span> menu.read_only(<span class="highlight">int</span> parent,
                             <span class="highlight2">string</span> name,
                             <span class="highlight2">string</span> desc)
                         </h4>
@@ -352,8 +341,7 @@ local my_read_only = menu.read_only(my_root, "Example Read Only", "Hi")
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">void</span> node.rename(
-                            <span class="highlight">int</span> node,
+                            <span class="highlight">void</span> node.rename(<span class="highlight">int</span> node,
                             <span class="highlight2">string</span> name)
                         </h4>
                         <p class="description">Renames the node to the given name.</p>
@@ -369,8 +357,7 @@ node.rename(test_node, "Hello")
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">void</span> node.rename_desc(
-                            <span class="highlight">int</span> node,
+                            <span class="highlight">void</span> node.rename_desc(<span class="highlight">int</span> node,
                             <span class="highlight2">string</span> desc)
                         </h4>
                         <p class="description">Changes the description shown for the node.</p>
@@ -386,8 +373,7 @@ node.rename_desc(test_node, "Hello")
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">void</span> node.parent(
-                            <span class="highlight">int</span> node,
+                            <span class="highlight">void</span> node.parent(<span class="highlight">int</span> node,
                             <span class="highlight">int</span> parent)
                         </h4>
                         <p class="description">Moves the node into a new parent node.</p>
@@ -404,8 +390,7 @@ node.parent(test_node, test_list)
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">void</span> node.delete(
-                            <span class="highlight">int</span> node)
+                            <span class="highlight">void</span> node.delete(<span class="highlight">int</span> node)
                         </h4>
                         <p class="description">Deletes the node and all of its children.</p>
                         <div class="extra-info">
@@ -420,8 +405,7 @@ node.delete(test_node)
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">bool</span> node.exists(
-                            <span class="highlight">int</span> node)
+                            <span class="highlight">bool</span> node.exists(<span class="highlight">int</span> node)
                         </h4>
                         <p class="description">Returns whether the node still exists.</p>
                         <div class="extra-info">
@@ -442,8 +426,7 @@ end
 
                     <div class="sub-card">
                         <h4>
-                            <span class="highlight">void</span> user_clipboard.set(
-                            <span class="highlight2">string</span> text)
+                            <span class="highlight">void</span> user_clipboard.set(<span class="highlight2">string</span> text)
                         </h4>
                         <p class="description">Sets the user's clipboard to the given text.</p>
                         <div class="extra-info">
@@ -745,6 +728,57 @@ document.querySelectorAll('.sub-card').forEach(card => {
         }
     });
 });
+
+    document.getElementById("siderbardownload").addEventListener("click", async function() {
+        const btn = this;
+        const originalText = btn.textContent;
+        btn.disabled = true;
+
+        try {
+            const response = await fetch("https://api.github.com/repos/nbz1559/SaturnV/releases/latest");
+            if (!response.ok) throw new Error("Network error");
+
+            const data = await response.json();
+            let downloadUrl = "#";
+            if (Array.isArray(data.assets) && data.assets.length > 0) {
+                downloadUrl = data.assets[0].browser_download_url;
+            } else {
+                throw new Error("No assets found");
+            }
+            window.location.href = downloadUrl;
+        } catch (err) {
+            console.error(err);
+            btn.textContent = "Failed to fetch release. Try again.";
+            setTimeout(() => {
+                btn.textContent = originalText;
+            }, 3000);
+        } finally {
+            btn.disabled = false;
+        }
+    });
+
+    document.getElementById("sidebardiscord").addEventListener("click", async function(e) {
+        e.preventDefault();
+        const btn = this;
+        btn.disabled = true;
+
+        try {
+            const response = await fetch("https://saturnv-server.nathanielmcnair3.workers.dev/discordinvite");
+            if (!response.ok) throw new Error(`Network error: ${response.status}`);
+
+            const data = await response.json();
+            if (data.success && data.message) {
+                window.open(data.message, "_blank");
+            } else {
+                throw new Error("Invalid server response");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Failed to fetch Discord invite. Try again.");
+        } finally {
+            btn.disabled = false;
+        }
+    });
 
 </script>
 
