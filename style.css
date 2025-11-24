@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    background: linear-gradient(145deg, #f4f4f9, #e8ebf3);
+    background: linear-gradient(145deg, #000000, #000000);
     color: #333;
     line-height: 1.6;
 }
@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: 3px 0 15px rgba(0,0,0,0.2);
-    border-right: 3px solid #000000;
+    border-right: 3px solid #252525;
 }
 
 .sidebar h2 {
@@ -68,7 +68,7 @@ body {
 
 .footer-bar {
     width: 100%;
-    background: #f8f9fc;
+    background: #303030;
     color: #fff;
     text-align: center;
     padding: 15px 0;
@@ -82,9 +82,9 @@ body {
 
 .main-content {
     flex: 1;
-    padding: 40px;
+    padding: 25px;
     overflow-y: auto;
-    background: #f8f9fc;
+    background: #303030;
 }
 
 .columns {
@@ -95,7 +95,7 @@ body {
 }
 
 .column {
-    background: #fff;
+    background: #242424;
     padding: 25px;
     border-radius: 12px;
     flex: 1;
@@ -105,7 +105,7 @@ body {
 }
 
 .column.card {
-    background: #fff;
+    background: #242424;
     border-radius: 12px;
     flex: 1;
     min-width: 280px;
@@ -118,12 +118,12 @@ body {
 .column.card h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4em;
-    color: #1e1e2f;
+    color: #ffffff;
     border-bottom: 2px solid #00bfff;
     padding: 15px 20px;
     margin: 0 0 20px 0;
     border-radius: 12px 12px 0 0;
-    background: #f8f9fc;
+    background: rgb(31, 31, 31);
 }
 
 .card-content {
@@ -134,7 +134,7 @@ body {
 }
 
 .sub-card {
-    background: #f8f9fc;
+    background: rgb(31, 31, 31);
     padding: 15px 20px;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
@@ -150,7 +150,7 @@ body {
 .sub-card p {
     margin: 0;
     line-height: 1.5;
-    color: #555;
+    color: #6d6d6d;
     font-size: 0.95em;
 }
 
@@ -170,7 +170,7 @@ body {
 .card-content p {
     margin: 0;
     line-height: 1.6;
-    color: #555;
+    color: #ffffff;
 }
 
 .column:hover {
@@ -180,12 +180,13 @@ body {
 
 .column h3, .tos-content h2, .lua-content h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #1e1e2f;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .main-content h2 {
     font-size: 2em;
+    color: #ffffff;
     border-bottom: 2px solid #00bfff;
     padding-bottom: 8px;
 }
@@ -196,21 +197,19 @@ body {
     padding-bottom: 8px;
 }
 
-.tos-content p, .lua-content p {
+.tos-content p {
     margin-bottom: 15px;
     line-height: 1.7;
-    color: #555;
+    color: #ffffff;
 }
 
-.tos-content a, .lua-content a {
+.tos-content a {
     color: #00bfff;
     text-decoration: underline;
-    transition: all 0.3s ease;
 }
 
-.tos-content a:hover, .lua-content a:hover {
+.tos-content a:hover {
     color: #0077aa;
-    text-decoration: none;
 }
 
 .main-content::-webkit-scrollbar,
@@ -270,21 +269,21 @@ body {
 
 .tos-content {
     flex: 1;
-    padding: 40px;
+    padding: 25px;
     overflow-y: auto;
     gap: 30px;
     flex-wrap: wrap;
-    background: #f8f9fc;
-    border-radius: 12px;
+    background: #303030;
+    color: #ffffff;
 }
 
 .tos-content .column {
-    background: #fff;
+    background: #242424;
     padding: 25px;
     border-radius: 12px;
     flex: 1;
     min-width: 280px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
@@ -301,21 +300,21 @@ body {
 
 .lua-content {
     flex: 1;
-    padding: 40px;
+    padding: 25px;
     overflow-y: auto;
     gap: 30px;
     flex-wrap: wrap;
-    background: #f8f9fc;
-    border-radius: 12px;
+    background: #303030;
+    color: #ffffff;
 }
 
 .lua-content .column {
-    background: #fff;
+    background: #242424;
     padding: 25px;
     border-radius: 12px;
     flex: 1;
     min-width: 280px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
@@ -326,7 +325,17 @@ body {
 
 .lua-content .sub-card {
     margin-bottom: 24px;
+    background: rgb(28, 28, 28);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    cursor: default;
 }
+
+.lua-content .sub-card:hover {
+    cursor: pointer;
+}
+
 
 .lua-content .column {
     margin-bottom: 28px;
@@ -350,7 +359,35 @@ body {
 
 .lua-content .sub-card .description {
     margin: 0;
-    color: #555;
+    color: #cfcfcf;
     line-height: 1.5;
     font-size: 0.95em;
+}
+
+.extra-info {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.extra-inner {
+    padding-top: 10px;
+    color: #cfcfcf;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+.lua-content .sub-card.open .extra-info {
+    opacity: 1;
+}
+
+.lua-content code {
+    color: #8f8f8f;
+    background-color: rgb(28, 28, 28);
+    overflow-x: auto;
+}
+
+.lua-content .extra-info p {
+    color: #cfcfcf;
 }
