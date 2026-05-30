@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SaturnV — Verify Email</title>
+    <link rel="stylesheet" href="../../utilitys/style.css">
+    <link rel="icon" type="image/x-icon" href="../../utilitys/website.ico">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <h2>SaturnV</h2>
+        <nav>
+            <ul>
+                <li><a href="../../main/">Main</a></li>
+                <li><a href="../../tos/">Terms of Service</a></li>
+                <li><a href="#" id="siderbardownload">Download</a></li>
+                <li><a href="#" id="sidebardiscord">Discord (Support)</a></li>
+                <li><a href="../../account/" class="active">Account</a></li>
+                <li><a href="../../other/">Other</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="account-content">
+        <h2>Verify Email</h2>
+
+        <!-- Loading state -->
+        <div id="view-loading" style="display:flex;">
+            <div class="account-info-card" style="text-align:center;">
+                <div class="info-value" style="color:#aaa;">Verifying your account...</div>
+            </div>
+        </div>
+
+        <!-- Success state -->
+        <div id="view-success" style="display:none;">
+            <div class="account-info-card" style="text-align:center;gap:12px;">
+                <p style="font-size:1.5em;">✅</p>
+                <div class="info-value" style="font-size:1.1em;font-weight:700;">Email verified!</div>
+                <div class="info-value" style="color:#aaa;font-size:0.9em;">Your account has been created and you're now logged in.</div>
+                <a href="../../account/" class="account-btn" style="text-decoration:none;text-align:center;margin-top:8px;">Go to Account</a>
+            </div>
+        </div>
+
+        <!-- Error state -->
+        <div id="view-error" style="display:none;">
+            <div class="account-info-card" style="text-align:center;gap:12px;">
+                <p style="font-size:1.5em;">❌</p>
+                <div class="info-value" style="font-size:1.1em;font-weight:700;">Verification failed</div>
+                <div class="info-value" style="color:#aaa;font-size:0.9em;" id="error-message">This link is invalid or has expired.</div>
+                <a href="../../account/" class="account-btn" style="text-decoration:none;text-align:center;margin-top:8px;">Back to Account</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="../../utilitys/sidebar.js"></script>
+<script>
+    const API = "https://api.saturnvmenu.com";
+
+    async function verify() {
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get("token");
+
+        if (!token) {
+            showError("No verification token found in the URL.");
+            return;
+        }
+
+        try {
+            const res = await fetch(API + "/verify?token=" + token);
+            const data = await res.json();
+
+            if (data.success) {
+                localStorage.setItem("sv_token", data.token);
+                document.getElementById("view-loading").style.display = "none";
+                document.getElementById("view-success").style.display = "flex";
+            } else {
+                showError(data.message || "Verification failed.");
+            }
+        } catch (e) {
+            showError("Could not reach the server.");
+        }
+    }
+
+    function showError(message) {
+        document.getElementById("view-loading").style.display = "none";
+        document.getElementById("error-message").textContent = message;
+        document.getElementById("view-error").style.display = "flex";
+    }
+
+    verify();
+</script>
+<footer class="footer-bar">
+    &copy; 2026 SaturnV Menu. All rights reserved.
+</footer>
+</body>
+</html>
