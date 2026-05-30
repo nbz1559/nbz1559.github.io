@@ -125,6 +125,12 @@ h2 {
     backdrop-filter: blur(2px);
 }
 
+.sidebar nav ul li a.active {
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.5) !important;
+    box-shadow: 0 0 14px rgba(255,255,255,0.25) !important;
+}
+
 .sidebar .sidebar-footer {
     font-size: 0.85em;
     opacity: 0.6;
@@ -427,4 +433,259 @@ h2 {
     .columns {
         flex-direction: column;
     }
+}
+
+/* ── Account page ─────────────────────────────────────────────────────────── */
+
+.account-content {
+    flex: 1;
+    padding: 30px;
+    padding-bottom: 80px;
+    overflow-y: auto;
+    background: rgba(30,30,30,0.95);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+
+#view-auth,
+#view-account {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    width: 100%;
+}
+
+#view-account {
+    text-align: center;
+}
+
+.account-info-card {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 480px;
+}
+
+.account-btn-outline {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.account-info-row {
+    text-align: left;
+}
+
+#view-auth .account-tabs,
+#view-auth .account-panel,
+#view-account .account-info-card,
+#view-account .account-btn-outline {
+    width: 100%;
+    max-width: 480px;
+}
+
+.account-content::-webkit-scrollbar { width: 10px; }
+.account-content::-webkit-scrollbar-thumb { background: #555; border-radius: 6px; }
+.account-content::-webkit-scrollbar-thumb:hover { background: #ffffff; }
+
+.account-content h2 {
+    font-size: 2em;
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Tabs */
+.account-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+.account-tab {
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    color: #aaa;
+    border: 2px solid rgba(255,255,255,0.15);
+    background: rgba(35,35,35,0.9);
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.account-tab:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.4);
+    box-shadow: 0 0 14px rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.account-tab.active {
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
+    box-shadow: 0 0 18px rgba(255,255,255,0.3);
+    background: rgba(50,50,50,0.95);
+}
+
+/* Panels */
+.account-panel { display: none; }
+.account-panel.active { display: flex; flex-direction: column; gap: 18px; }
+
+/* Form fields */
+.account-field label {
+    display: block;
+    font-size: 0.78em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+    margin-bottom: 7px;
+}
+
+.account-field input {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(28,28,28,0.95);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 11px 16px;
+    color: #e0e0e0;
+    font-size: 0.95em;
+    font-family: 'Poppins', Arial, sans-serif;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255,255,255,0.04);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.account-field input:focus {
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0 14px rgba(255,255,255,0.15);
+}
+
+.account-field input::placeholder { color: #3a3a3a; }
+
+.account-hint {
+    font-size: 0.78em;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Submit button */
+.account-btn {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px;
+    background: rgba(255,255,255,0.92);
+    color: #111;
+    font-size: 0.95em;
+    font-weight: 700;
+    font-family: 'Poppins', Arial, sans-serif;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    box-shadow: 0 0 14px rgba(255,255,255,0.2), 0 8px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-top: 4px;
+}
+
+.account-btn:hover {
+    background: #ffffff;
+    box-shadow: 0 0 22px rgba(255,255,255,0.45), 0 12px 28px rgba(0,0,0,0.25);
+    transform: translateY(-3px);
+}
+
+.account-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Logout button — outlined style */
+.account-btn-outline {
+    width: auto;
+    padding: 10px 28px;
+    background: transparent;
+    color: #aaa;
+    font-size: 0.9em;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(255,255,255,0.06);
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.account-btn-outline:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0 16px rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* Alert messages */
+.account-alert {
+    display: none;
+    padding: 11px 16px;
+    border-radius: 12px;
+    font-size: 0.88em;
+    max-width: 420px;
+}
+
+.account-alert.error {
+    display: block;
+    background: rgba(180,60,60,0.15);
+    border: 2px solid rgba(200,80,80,0.35);
+    color: #e08080;
+}
+
+.account-alert.success {
+    display: block;
+    background: rgba(60,160,100,0.15);
+    border: 2px solid rgba(80,180,120,0.35);
+    color: #70c090;
+}
+
+/* Logged-in account info card */
+.account-info-card {
+    background: rgba(35,35,35,0.9);
+    border: 2px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 28px;
+    max-width: 480px;
+    box-shadow: 0 0 12px rgba(255,255,255,0.07), 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%
+}
+
+.account-info-row .info-label {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.account-info-row .info-value {
+    font-size: 1em;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+.account-info-row .info-value.uid {
+    font-family: 'Courier New', monospace;
+    font-size: 0.88em;
+    color: #bbb;
+    letter-spacing: 0.06em;
+    word-break: break-all;
 }
