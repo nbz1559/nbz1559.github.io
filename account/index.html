@@ -16,7 +16,7 @@
                 <li><a href="../tos/">Terms of Service</a></li>
                 <li><a href="#" id="siderbardownload">Download</a></li>
                 <li><a href="#" id="sidebardiscord">Discord (Support)</a></li>
-                <li><a href="../account/">Account</a></li>
+                <li><a href="../account/" class="active">Account</a></li>
                 <li><a href="../other/">Other</a></li>
             </ul>
         </nav>
@@ -26,7 +26,7 @@
         <h2>Account</h2>
 
         <!-- Logged-out view -->
-        <div id="view-auth">
+        <div id="view-auth" style="display:flex;">
             <div class="account-tabs">
                 <div class="account-tab active" data-tab="signup">Create Account</div>
                 <div class="account-tab" data-tab="login">Log In</div>
@@ -35,10 +35,9 @@
             <!-- Sign Up -->
             <div class="account-panel active" id="panel-signup">
                 <div class="account-alert" id="signup-alert"></div>
-
                 <div class="account-field">
                     <label>Username</label>
-                    <input type="text" id="signup-username" placeholder="e.g. username123" autocomplete="off" maxlength="32"/>
+                    <input type="text" id="signup-username" placeholder="e.g. saturn_user" autocomplete="off" maxlength="32"/>
                 </div>
                 <div class="account-field">
                     <label>Email</label>
@@ -49,24 +48,34 @@
                     <input type="password" id="signup-password" placeholder="At least 6 characters"/>
                     <div class="account-hint">Minimum 6 characters.</div>
                 </div>
-
                 <button class="account-btn" id="signup-btn" onclick="doSignup()">Create Account</button>
             </div>
 
             <!-- Log In -->
             <div class="account-panel" id="panel-login">
                 <div class="account-alert" id="login-alert"></div>
-
                 <div class="account-field">
                     <label>Email</label>
-                    <input type="email" id="login-email" placeholder="you@example.com" autocomplete="off"/>
+                    <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email"/>
                 </div>
                 <div class="account-field">
                     <label>Password</label>
-                    <input type="password" id="login-password" placeholder="Your password"/>
+                    <input type="password" id="login-password" placeholder="Your password" autocomplete="current-password"/>
                 </div>
-
                 <button class="account-btn" id="login-btn" onclick="doLogin()">Log In</button>
+            </div>
+        </div>
+
+        <!-- Pending verification view -->
+        <div id="view-pending" style="display:none;">
+            <div class="account-info-card" style="text-align:center;gap:12px;">
+                <p style="font-size:1.5em;">📧</p>
+                <div class="info-value" style="font-size:1.1em;font-weight:700;">Check your email</div>
+                <div class="info-value" style="color:#aaa;font-size:0.9em;line-height:1.7;">
+                    We sent a verification link to<br>
+                    <strong id="pending-email" style="color:#e0e0e0;"></strong>
+                </div>
+                <div style="color:#555;font-size:0.8em;margin-top:8px;">The link expires in 24 hours. Check your spam folder if you don't see it.</div>
             </div>
         </div>
 
@@ -86,7 +95,6 @@
                     <div class="info-value" id="account-created">—</div>
                 </div>
             </div>
-
             <button class="account-btn-outline" onclick="doLogout()">Log Out</button>
         </div>
     </main>
