@@ -1,4 +1,5 @@
 const NAV = [["/home/", "Home"], ["/updates/", "Updates"], ["/info/", "Info"], ["/terms/", "Terms"]];
+const API = location.hostname === "localhost" ? "http://localhost:8787" : "https://kestrel-server.nathanielmcnair3.workers.dev";
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -74,7 +75,7 @@ function renderAnnouncements(data) {
 async function main() {
   renderChrome();
   try {
-    const res = await fetch("/data/site.json", { cache: "no-store" });
+    const res = await fetch(`${API}/api/site`);
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
     renderStatus(data); renderLinks(data); renderChangelog(data); renderAnnouncements(data);
