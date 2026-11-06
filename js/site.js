@@ -1,4 +1,4 @@
-const NAV = [["/", "Home"], ["/updates.html", "Updates"], ["/info.html", "Info"], ["/terms.html", "Terms"]];
+const NAV = [["/home/", "Home"], ["/updates/", "Updates"], ["/info/", "Info"], ["/terms/", "Terms"]];
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
