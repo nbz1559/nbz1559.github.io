@@ -25,7 +25,16 @@ function renderChrome() {
       if (href === here) a.setAttribute("aria-current", "page");
       nav.append(a);
     }
-    wrap.append(brand, nav);
+    const actions = el("div", "header-actions");
+    for (const [key, label, style] of [["download", "Download", "btn-primary"], ["discord", "Join the Discord", "btn-ghost"]]) {
+      const a = el("a", "btn btn-sm " + style, label);
+      a.dataset.link = key;
+      a.href = "#";
+      actions.append(a);
+    }
+    const right = el("div", "header-right");
+    right.append(nav, actions);
+    wrap.append(brand, right);
     header.append(wrap);
   }
   if (footer) {
@@ -65,10 +74,11 @@ function renderAnnouncements(data) {
   if (!box) return;
   const limit = Number(box.dataset.limit) || Infinity;
   if (!data.announcements.length) { box.append(el("p", "empty", "No announcements right now.")); return; }
+  box.classList.add("timeline");   // same look as the changelog
   for (const item of data.announcements.slice(0, limit)) {
-    const note = el("article", "note");
-    note.append(el("h3", "", item.title), el("time", "", item.date), el("p", "", item.body));
-    box.append(note);
+    const entry = el("article", "entry");
+    entry.append(el("h3", "", item.title), el("time", "", item.date), el("p", "", item.body));
+    box.append(entry);
   }
 }
 
