@@ -29,7 +29,7 @@ function renderChrome() {
     for (const [key, label, style] of [["download", "Download", "btn-primary"], ["discord", "Join the Discord", "btn-ghost"]]) {
       const a = el("a", "btn btn-sm " + style, label);
       a.dataset.link = key;
-      a.href = "#";
+      a.href = "https://github.com/nbz1559/Kestrel-Releases/releases/latest/download/KestrelLauncher-win-Setup.exe";
       actions.append(a);
     }
     const right = el("div", "header-right");
