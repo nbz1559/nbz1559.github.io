@@ -1,5 +1,5 @@
 const NAV = [["/home/", "Home"], ["/updates/", "Updates"], ["/info/", "Info"], ["/terms/", "Terms"]];
-const API = location.hostname === "localhost" ? "http://localhost:8787" : "https://kestrel-server.nathanielmcnair3.workers.dev";
+const API = "https://kestrel-server.nathanielmcnair3.workers.dev";
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -29,7 +29,7 @@ function renderChrome() {
     for (const [key, label, style] of [["download", "Download", "btn-primary"], ["discord", "Join the Discord", "btn-ghost"]]) {
       const a = el("a", "btn btn-sm " + style, label);
       a.dataset.link = key;
-      a.href = "https://github.com/nbz1559/Kestrel-Releases/releases/latest/download/KestrelLauncher-win-Setup.exe";
+      a.href = "#";
       actions.append(a);
     }
     const right = el("div", "header-right");
